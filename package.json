@@ -5,12 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build": "vite build",
     "preview": "vite preview",
     "build-only": "vite build",
-    "type-check": "vue-tsc --build --force",
-    "lint": "eslint --cache --fix ./**/*.{js,ts,jsx,tsx}",
-    "format": "prettier --write src/"
+    "type-check": "vue-tsc --noEmit",
+    "lint": "eslint --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx --fix --ignore-path .gitignore .",
+    "format": "prettier --cache --write --ignore-unknown ."
   },
   "dependencies": {
     "@gkd-kit/api": "^0.0.5",
