@@ -28,8 +28,8 @@ export default defineComponent({
     changeSwitch(index: string, job: 'on' | 'off') {
       changeSwitch(index, job)
     },
-    quickStart(app: string) {
-      quickStart(app)
+    quickStart() {
+      quickStart()
     },
     readFile() {
       readFile()
@@ -87,8 +87,7 @@ export default defineComponent({
     </button>
   </div>
   <div id="quickStart">
-    <button type="button" class="btn btn1" @click="quickStart('GKD')">一键打开GKD</button>
-    <button type="button" class="btn btn1" @click="quickStart('GKDTool')">一键打开GKDTool</button>
+    <button type="button" class="btn btn1" @click="quickStart">一键打开GKD</button>
   </div>
   <div id="version">
     <div id="subVer"></div>
