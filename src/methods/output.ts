@@ -1,28 +1,13 @@
 import { fullScript, script } from './sub'
 import json5 from 'json5'
+import { downloadJson } from '@dlr-eoc/utils-browser'
 
 export const output = (type: string) => {
   if (type == 'all') {
-    const userSelect = document.getElementById('outputMode');
-    const index = (userSelect! as HTMLSelectElement).selectedIndex;
-    let blob;
-    if ((userSelect! as HTMLSelectElement).options[index].value == 'json') {
-      blob = new Blob([JSON.stringify(fullScript)], {
-        type: 'application/json'
-      });
-    }
-    else if ((userSelect! as HTMLSelectElement).options[index].value == 'json5') {
-      blob = new Blob([json5.stringify(fullScript)], {
-        type: 'application/json'
-      });
-    }
-    const downloadURL = URL.createObjectURL(blob!);
-    const aTag = document.createElement('a');
-    aTag.href = downloadURL;
-    if ((userSelect! as HTMLSelectElement).options[index].value == 'json') aTag.download = `${fullScript.id}.json`;
-    else if ((userSelect! as HTMLSelectElement).options[index].value == 'json5') aTag.download = `${fullScript.id}.json5`;
-    aTag.click();
-    URL.revokeObjectURL(downloadURL);
+    downloadJson(fullScript, `${fullScript.id}.json`)
+    navigator.clipboard.writeText(JSON.stringify(fullScript)).then(() => {
+      alert('全部规则已复制到剪切板，如果下载失败，可以自己粘贴到json文件中')
+    });
   }
   else {
     const location = type.split('.');

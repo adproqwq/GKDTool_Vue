@@ -11,7 +11,7 @@ import { edit } from './methods/edit'
 export default defineComponent({
   data() {
     return {
-      codeVer: '2.1.0'
+      codeVer: '2.1.1'
     }
   },
   methods: {
@@ -54,11 +54,6 @@ export default defineComponent({
   </div>
   <div>
     <button type="button" class="btn btn1" @click="output('all')">导出全部</button>
-    <span>导出格式：</span>
-    <select id="outputMode">
-      <option value="json">JSON</option>
-      <option value="json5">JSON5</option>
-    </select>
   </div>
   <div>
     <span>导入外部订阅文件：</span>

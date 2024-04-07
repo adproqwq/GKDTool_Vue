@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@dlr-eoc/utils-browser':
+    specifier: 12.0.1-next.2
+    version: 12.0.1-next.2
   '@gkd-kit/api':
     specifier: ^0.0.5
     version: 0.0.5
@@ -424,6 +427,12 @@ packages:
       '@babel/helper-string-parser': 7.24.1
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
+
+  /@dlr-eoc/utils-browser@12.0.1-next.2:
+    resolution: {integrity: sha512-DB+lGpl/Ng+Zh/dWFTgn04dod7J0cIQOn9KhmdxXwrekeJo3Hvn5v4Xxq5t1u+LTO6NpxAtoZgkWBvXDnV2/vA==}
+    dependencies:
+      tslib: 2.6.2
+    dev: false
 
   /@esbuild/aix-ppc64@0.20.2:
     resolution: {integrity: sha512-D+EBOJHXdNZcLJRBkhENNG8Wji2kgc9AZ9KiPr1JuZjsNtyHzrsfLRrY0tk2H2aoFu6RANO1y1iPPUCDYWkb5g==}
@@ -2798,7 +2807,6 @@ packages:
 
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
-    dev: true
 
   /type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
