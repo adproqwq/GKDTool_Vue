@@ -1,7 +1,7 @@
 <script lang="ts">
 import { type InputHTMLAttributes, defineComponent } from 'vue'
 import { search } from './methods/search'
-import { getDefaultSub, getThirdPartySub, switchStatus } from './methods/sub'
+import { getDefaultSub, getThirdPartySub } from './methods/sub'
 import { output } from './methods/output'
 import { changeSwitch } from './methods/changeSwitch'
 import { quickStart } from './methods/quickStart'
@@ -11,7 +11,7 @@ import { edit } from './methods/edit'
 export default defineComponent({
   data() {
     return {
-      codeVer: '2.0.3'
+      codeVer: '2.1.0'
     }
   },
   methods: {
@@ -35,9 +35,6 @@ export default defineComponent({
     },
     edit(location: string) {
       edit(location)
-    },
-    switchStatus(type: 'memorize' | 'read') {
-      switchStatus(type)
     }
   },
   created() {
@@ -46,13 +43,14 @@ export default defineComponent({
   mounted() {
     ;(window as any).changeSwitch = this.changeSwitch
     ;(window as any).edit = this.edit
+    ;(window as any).output = this.output
   }
 })
 </script>
 
 <template>
   <div>
-    <input id="name" placeholder="搜索应用或包名" @keydown.enter="search" />
+    <input id="name" placeholder="搜索应用或包名" @change="search" />
   </div>
   <div>
     <button type="button" class="btn btn1" @click="output('all')">导出全部</button>
@@ -68,7 +66,7 @@ export default defineComponent({
     <span>选择第三方订阅：</span>
     <select id="thirdParty">
       <option selected disabled hidden value="defult" label="默认订阅"></option>
-      <option value="Adpro" label="Adpro的GKD订阅"></option>
+      <option value="Adpro" label="AdproのGKD订阅"></option>
       <option value="AIsouler" label="AIsouler的GKD订阅"></option>
       <option value="aoguai" label="aoguai的GKD订阅"></option>
       <option value="ganlinte" label="甘霖的GKD订阅"></option>
@@ -76,14 +74,6 @@ export default defineComponent({
       <option value="MengNianxiaoyao" label="梦念逍遥の订阅"></option>
     </select>
     <button type="button" class="btn btn1" @click="getThirdPartySub">快捷导入第三方订阅</button>
-  </div>
-  <div id="switchStatus">
-    <button type="button" class="btn btn1" @click="switchStatus('memorize')">
-      记忆当前订阅开关状态
-    </button>
-    <button type="button" class="btn btn1" @click="switchStatus('read')">
-      读取当前订阅开关状态
-    </button>
   </div>
   <div id="quickStart">
     <button type="button" class="btn btn1" @click="quickStart">一键打开GKD</button>
@@ -110,7 +100,7 @@ export default defineComponent({
             >默认订阅</a
           >项目
         </li>
-        <li>本网站由Adpro开发</li>
+        <li>©2024 Adpro</li>
       </ul>
     </div>
   </div>
