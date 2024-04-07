@@ -12,7 +12,7 @@ import { switchStatus } from './methods/switchStatus'
 export default defineComponent({
   data() {
     return {
-      codeVer: '2.0.1'
+      codeVer: '2.0.2'
     }
   },
   methods: {

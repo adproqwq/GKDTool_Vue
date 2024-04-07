@@ -24,10 +24,7 @@ const tableInfo = (appName: string, packageName: string, category: string, id: s
   const result = `
     <tr>
         <td>${appName}</td>
-        <td>
-            ${packageName}
-            <button onclick="copyPackageName('${id}');">复制</button>
-        </td>
+        <td>${packageName}</td>
         <td>${category}</td>
         <td id="${id}" style="${style}">${ruleName}</td>
         <td>${desc}</td>
