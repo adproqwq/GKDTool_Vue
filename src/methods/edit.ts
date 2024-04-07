@@ -1,5 +1,5 @@
 import json5 from 'json5'
-import { script } from './getSub';
+import { script } from './sub';
 
 export const edit = (location: string) => {
   let i = location.split('.')[0];

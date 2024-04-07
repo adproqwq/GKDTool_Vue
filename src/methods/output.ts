@@ -1,4 +1,4 @@
-import { fullScript, script } from './getSub'
+import { fullScript, script } from './sub'
 import json5 from 'json5'
 
 export const output = (type: string) => {

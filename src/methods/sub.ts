@@ -57,6 +57,28 @@ export const getThirdPartySub = () => {
   }
 }
 
+export const switchStatus = (type: 'memorize' | 'read') => {
+  if (type == 'memorize') {
+    localStorage.setItem(String(fullScript.id), json5.stringify(script));
+    alert('全部都记下来了！');
+  }
+  else if (type == 'read') {
+    try {
+      let result = localStorage.getItem(String(fullScript.id));
+      throw result;
+    } catch (error) {
+      if (error == null) {
+        alert('我的脑子里似乎没有这方面的记忆');
+        return
+      }
+    }
+    originSub = { ...fullScript }
+    originSub.apps = json5.parse(localStorage.getItem(String(fullScript.id))!)
+    alert('一字不落地还原了！');
+    [fullScript, script, categories] = writeTable(originSub)
+  }
+}
+
 export let originSub: RawSubscription
 
 export let fullScript: RawSubscription

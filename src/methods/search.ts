@@ -1,4 +1,4 @@
-import { originSub } from './getSub'
+import { originSub } from './sub'
 import { writeTable } from './table';
 
 export const search = (target: string) => {

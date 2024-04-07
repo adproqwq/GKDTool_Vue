@@ -1,18 +1,17 @@
 <script lang="ts">
 import { type InputHTMLAttributes, defineComponent } from 'vue'
 import { search } from './methods/search'
-import { getDefaultSub, getThirdPartySub } from './methods/getSub'
+import { getDefaultSub, getThirdPartySub, switchStatus } from './methods/sub'
 import { output } from './methods/output'
 import { changeSwitch } from './methods/changeSwitch'
 import { quickStart } from './methods/quickStart'
 import { readFile } from './methods/readFile'
 import { edit } from './methods/edit'
-import { switchStatus } from './methods/switchStatus'
 
 export default defineComponent({
   data() {
     return {
-      codeVer: '2.0.2'
+      codeVer: '2.0.3'
     }
   },
   methods: {

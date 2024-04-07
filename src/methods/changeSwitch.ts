@@ -1,4 +1,4 @@
-import { script } from './getSub';
+import { script } from './sub';
 
 export const changeSwitch = (index: string, job: 'on' | 'off') => {
   if (index != 'all') {
