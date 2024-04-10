@@ -97,10 +97,10 @@ export default defineComponent({
       <ul class="footer-column-b">
         <li>托管服务：<a href="https://vercel.com/">Vercel</a></li>
         <li>
-          特别鸣谢：<a href="https://github.com/gkd-kit/gkd">GKD</a>及其<a
-            href="https://github.com/gkd-kit/subscription"
-            >默认订阅</a
-          >项目
+          特别鸣谢：<a href="https://github.com/gkd-kit/gkd">GKD</a>
+          及其
+          <a href="https://github.com/gkd-kit/subscription">默认订阅</a>
+          项目
         </li>
         <li>©2024 Adpro</li>
       </ul>
