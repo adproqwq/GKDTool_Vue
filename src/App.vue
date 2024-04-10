@@ -11,7 +11,7 @@ import { edit } from './methods/edit'
 export default defineComponent({
   data() {
     return {
-      codeVer: '2.1.1'
+      codeVer: '2.1.2'
     }
   },
   methods: {
@@ -73,8 +73,15 @@ export default defineComponent({
   <div id="quickStart">
     <button type="button" class="btn btn1" @click="quickStart">一键打开GKD</button>
   </div>
-  <div id="version">
+  <div>
+    <p>
+      不知道如何在GKD中导入订阅文件？
+      <a href="https://docs.qq.com/doc/DY1RxVG9ES3JHeWpw">点此查看教程</a>
+    </p>
+  </div>
+  <div id="info">
     <div id="subVer"></div>
+    <div id="author"></div>
     <div id="codeVer"></div>
   </div>
   <div id="appList"></div>

@@ -43,6 +43,7 @@ export const writeTable = (data: RawSubscription): [RawSubscription, RawApp[], R
   const script = data.apps
   const categories = data.categories
   document.getElementById('subVer')!.innerHTML = '<span>订阅版本：' + fullScript.version + '</span>'
+  document.getElementById('author')!.innerHTML = '<span>订阅作者：' + fullScript.author + '</span>'
   document.getElementById('codeVer')!.innerHTML = '<span>当前程序版本：' + JSON.parse(JSON.stringify(app.$data)).codeVer + '</span>'
   document.getElementById('appList')!.innerHTML = initAppTable
   let eachAppRule = '';
