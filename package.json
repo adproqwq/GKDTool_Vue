@@ -15,10 +15,10 @@
   "dependencies": {
     "@dlr-eoc/utils-browser": "12.0.1-next.2",
     "@gkd-kit/api": "^0.0.5",
-    "callapp-lib": "^3.5.3",
     "jquery": "^3.7.1",
     "json5": "^2.2.3",
-    "vue": "^3.4.21"
+    "vue": "^3.4.21",
+    "web-launch-app": "^2.2.8"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.10.2",

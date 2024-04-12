@@ -1,20 +1,13 @@
-import CallApp from 'callapp-lib'
+import { LaunchApp } from "web-launch-app";
 
 export const quickStart = () => {
-  const options = {
-    scheme: {
-      protocol: 'gkd',
-      host: 'import',
+  const launchApp = new LaunchApp();
+  launchApp.open({
+    scheme: 'gkd://import',
+    timeout: 2000,
+    pkgs: {
+      android: 'https://registry.npmmirror.com/@gkd-kit/app/2.0.17/files/dist/gkd-v1.7.3.apk',
     },
-    intent: {
-      package: 'li.songe.gkd',
-      scheme: 'gkd',
-    },
-    appstore: '',
-    fallback: 'https://gkd.li/guide/#install',
-  };
-  const callLib = new CallApp(options);
-  callLib.open({
-    path: 'import',
+    landPage: 'https://gkd.li/guide/#install',
   });
 }
