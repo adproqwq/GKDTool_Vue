@@ -11,7 +11,7 @@ import { edit } from './methods/edit'
 export default defineComponent({
   data() {
     return {
-      codeVer: '2.1.2'
+      codeVer: '2.1.3'
     }
   },
   methods: {
