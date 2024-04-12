@@ -21,7 +21,7 @@ export const getThirdPartySub = () => {
     });
   }
   else if ((userSelect! as HTMLSelectElement).options[index].value == 'AIsouler') {
-    $.get('https://cdn.jsdelivr.net/gh/AIsouler/GKD_subscription@main/dist/AIsouler_gkd.json5', (data) => {
+    $.get('https://registry.npmmirror.com/@aisouler/gkd_subscription/latest/files/dist/AIsouler_gkd.json5', (data) => {
       originSub = json5.parse(data);
       [fullScript, script, categories] = writeTable(originSub);
       alert('导入成功！');
