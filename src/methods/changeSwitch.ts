@@ -1,4 +1,4 @@
-import { script } from './sub';
+import { apps } from './sub';
 
 export const changeSwitch = (index: string, job: 'on' | 'off') => {
   if (index != 'all') {
@@ -6,7 +6,7 @@ export const changeSwitch = (index: string, job: 'on' | 'off') => {
     const i = location[0], j = location[1];
     if (job == 'on') {
       if (document.getElementById(index)!.style.color == 'red') {
-        delete script[Number(i)].groups[Number(j)].enable;
+        delete apps[Number(i)].groups[Number(j)].enable;
         document.getElementById(index)!.style.color = 'green';
         alert('已开启');
       }
@@ -15,24 +15,24 @@ export const changeSwitch = (index: string, job: 'on' | 'off') => {
     else if (job == 'off') {
       if (document.getElementById(index)!.style.color == 'red') alert('该规则已经关闭了');
       else {
-        script[Number(i)].groups[Number(j)].enable = false
+        apps[Number(i)].groups[Number(j)].enable = false
         document.getElementById(index)!.style.color = 'red'
         alert('已关闭');
       }
     }
   }
   else {
-    for (const i in script) {
-      for (const j in script[i].groups) {
+    for (const i in apps) {
+      for (const j in apps[i].groups) {
         if (document.getElementById(String(i) + '.' + String(j))!.style.color == 'red') {
           if (job == 'on') {
-            delete script[i].groups[j].enable;
+            delete apps[i].groups[j].enable;
             document.getElementById(String(i) + '.' + String(j))!.style.color = 'green';
           }
         }
         else {
           if (job == 'off') {
-            script[i].groups[j].enable = false;
+            apps[i].groups[j].enable = false;
             document.getElementById(String(i) + '.' + String(j))!.style.color = 'red';
           }
         }
