@@ -11,7 +11,7 @@ import { edit } from './methods/edit'
 export default defineComponent({
   data() {
     return {
-      codeVer: '2.1.3'
+      codeVer: '2.1.4'
     }
   },
   methods: {
@@ -39,11 +39,12 @@ export default defineComponent({
   },
   created() {
     getDefaultSub()
+    alert('GKD 已包含配置导入/导出功能，将在下一正式版发布时推出。本工具将在下一正式版发布时停止服务。届时网页端将会无法访问，安卓端不仍能正常使用，但不会进行维护。');
   },
   mounted() {
-    ;(window as any).changeSwitch = this.changeSwitch
-    ;(window as any).edit = this.edit
-    ;(window as any).output = this.output
+    ; (window as any).changeSwitch = this.changeSwitch
+      ; (window as any).edit = this.edit
+      ; (window as any).output = this.output
   }
 })
 </script>
@@ -95,7 +96,6 @@ export default defineComponent({
   <div id="copyright-box">
     <div id="copyright-footer" class="column small">
       <ul class="footer-column-b">
-        <li>托管服务：<a href="https://vercel.com/">Vercel</a></li>
         <li>
           特别鸣谢：<a href="https://github.com/gkd-kit/gkd">GKD</a>
           及其
